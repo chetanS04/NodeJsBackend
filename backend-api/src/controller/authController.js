@@ -6,9 +6,7 @@ const { User, PasswordResetToken } = require("../../models");
 const config = require("../../config/authConfigSecret");
 const sendForgetPasswordToken = require("../../src/services/emailService");
 
-// =========================
-// LOGIN
-// =========================
+
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -50,9 +48,7 @@ const login = async (req, res) => {
   }
 };
 
-// =========================
-// FORGOT PASSWORD
-// =========================
+
 const forgotPassword = async (req, res) => {
   const { email } = req.body;
 
@@ -86,9 +82,7 @@ const forgotPassword = async (req, res) => {
   }
 };
 
-// =========================
-// VERIFY TOKEN
-// =========================
+
 const getResetPassword = async (req, res) => {
   const { token } = req.params;
 
@@ -112,9 +106,7 @@ const getResetPassword = async (req, res) => {
   }
 };
 
-// =========================
-// RESET PASSWORD
-// =========================
+
 const resetpassword = async (req, res) => {
   const { token } = req.params;
   const { password, confirmPassword } = req.body;
